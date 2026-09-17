@@ -1,6 +1,6 @@
-# Capeg Assignments
+# Assignments
 
-This repository contains a collection of data science, machine learning, and NLP assignments completed as part of the Capeg program. Each notebook focuses on a different task, from text preprocessing and classification to semantic search and emotion analysis.
+This repository contains a collection of data science, machine learning, and NLP assignments completed as part of the program. Each notebook focuses on a different task, from text preprocessing and classification to semantic search and emotion analysis.
 
 ## Repository overview
 
