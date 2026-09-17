@@ -1,112 +1,93 @@
-# Semantic Chatbot
+# Capeg Assignments
 
-A lightweight semantic question-answering chatbot built with Python and Sentence Transformers. Instead of matching user input by exact keywords, it compares the meaning of a question with a collection of FAQ questions and returns the answer associated with the closest match.
+This repository contains a collection of data science, machine learning, and NLP assignments completed as part of the Capeg program. Each notebook focuses on a different task, from text preprocessing and classification to semantic search and emotion analysis.
 
-## Features
+## Repository overview
 
-- Semantic rather than exact-text question matching
-- Uses cosine similarity through `sentence-transformers`
-- Multilingual sentence-embedding model: `distiluse-base-multilingual-cased-v1`
-- Simple FAQ-style question and answer dataset
-- Interactive command-line chat loop
-- Type `exit` or `quit` to end the conversation
+The projects in this repository include:
 
-## How it works
-
-1. FAQ questions are stored together with their answers.
-2. The chatbot encodes the FAQ questions into vector embeddings.
-3. A user's query is encoded using the same model.
-4. Semantic search finds the most similar FAQ question.
-5. The chatbot returns the answer associated with that question.
-
-This approach allows related questions such as `How can I stay focused?` and `How to improve focus?` to be treated as similar even when their wording is different.
+- Custom Chatbot: a semantic FAQ-based chatbot using sentence embeddings
+- Emotion Detection: text-based emotion classification using NLP techniques
+- Keyword Extraction: extracting important words and phrases from text
+- Model Evaluation for Text (TF-IDF Vectorizer): comparing model performance using TF-IDF features
+- Spam Classifier (CountVectorizer + Naive Bayes): building a spam detection model
+- Restaurant Sales: exploratory data analysis and sales insights
+- Text Extraction using Regex: extracting structured information from text using regular expressions
 
 ## Project structure
 
 ```text
 .
-├── Custom_Chatbot.ipynb  # Notebook containing the chatbot implementation
-└── README.md             # Project documentation
+├── Custom_Chatbot.ipynb
+├── Emotion_Detection (1).ipynb
+├── Keyword_Extraction.ipynb
+├── Model_eval_for_text_(tfidfvectorizer).ipynb
+├── Restraunt_Sales.ipynb
+├── Spam_Classifier_(CountVectorizer_and_NaiveBias).ipynb
+├── Text_Extraction_using_Regex.ipynb
+├── README.md
+└── .gitignore
 ```
+
+## Tech stack
+
+The assignments use a range of Python libraries commonly used in NLP and data science, including:
+
+- Python
+- Jupyter Notebook
+- pandas
+- NumPy
+- scikit-learn
+- NLTK
+- Matplotlib
+- Seaborn
+- sentence-transformers
+- PyTorch
 
 ## Requirements
 
-- Python 3.8 or later
-- Jupyter Notebook or Google Colab
-- pandas
-- sentence-transformers
-- PyTorch (installed as a dependency of `sentence-transformers` in most environments)
+- Python 3.8+
+- Jupyter Notebook or VS Code with Jupyter support
+- Internet access (for downloading models/packages when needed)
+
+Install the core dependencies with:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate   # On macOS/Linux
+# .venv\Scripts\Activate.ps1  # On Windows PowerShell
+
+pip install --upgrade pip
+pip install jupyter pandas numpy scikit-learn nltk matplotlib seaborn sentence-transformers torch
+```
 
 ## Getting started
 
-### Option 1: Run in Google Colab
-
-1. Open [`Custom_Chatbot.ipynb`](./Custom_Chatbot.ipynb).
-2. Open the notebook in Google Colab.
-3. Run the cells from top to bottom.
-4. When prompted, enter a question in the chatbot.
-
-### Option 2: Run locally
-
-Clone the repository and install the dependencies:
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/ManYaAr/Semantic-Chatbot.git
-cd Semantic-Chatbot
-python -m venv .venv
+git clone https://github.com/ManYaAr/Capeg-assignments.git
+cd Capeg-assignments
 ```
 
-Activate the virtual environment:
+2. Create and activate a virtual environment.
+
+3. Install the dependencies.
+
+4. Open the project notebooks in Jupyter:
 
 ```bash
-# macOS/Linux
-source .venv/bin/activate
-
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
+jupyter notebook
 ```
 
-Install the required packages:
+5. Run the notebook you want to explore.
 
-```bash
-python -m pip install --upgrade pip
-pip install pandas sentence-transformers jupyter
-```
+## Notes
 
-Start Jupyter and open the notebook:
-
-```bash
-jupyter notebook Custom_Chatbot.ipynb
-```
-
-Run all cells in order and start the chatbot when the final cell is reached.
-
-## Example
-
-```text
-Chatbot: Hello! Ask a question or type exit to quit.
-You : tell me about machine learning
-Chatbot : Machine learning is a field of AI that uses statistical techniques to give computers the ability to learn without being explicitly programmed.
-You : how to stay focused
-Chatbot : Improve focus with mindful practices and setting clear goals.
-You : exit
-Chatbot: Goodbye!
-```
-
-## Customizing the chatbot
-
-To use the chatbot with your own knowledge base, edit the FAQ data in `Custom_Chatbot.ipynb`. Keep the questions and answers aligned by index, then rerun the cells that create the DataFrame and embeddings.
-
-For larger datasets, consider storing the questions and answers in CSV or JSON files and adding a similarity threshold so the chatbot can respond gracefully when no FAQ entry is relevant.
-
-## Limitations
-
-- The chatbot returns the answer for the single closest FAQ question; it does not generate new answers.
-- Responses are limited to the questions and answers included in the dataset.
-- The embedding model is downloaded the first time it is loaded and may require an internet connection.
-- The current implementation does not include a confidence threshold or conversation history.
+- Each notebook is a standalone assignment and can be run independently.
+- Some notebooks may require additional dataset downloads or model initialization on first run.
+- The repository is intended for learning and experimentation in NLP and machine learning.
 
 ## Author
 
 Created by [Manya Arora](https://github.com/ManYaAr).
-
