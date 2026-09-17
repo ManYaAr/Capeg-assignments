@@ -110,6 +110,3 @@ For larger datasets, consider storing the questions and answers in CSV or JSON f
 
 Created by [Manya Arora](https://github.com/ManYaAr).
 
-## License
-
-No license has been specified for this repository yet. Add a license if you intend to allow others to use, modify, or redistribute the project.
